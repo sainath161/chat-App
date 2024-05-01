@@ -8,6 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./lib/firebase";
 import { useUserStore } from "./lib/userStore";
 import { useChatStore } from "./lib/chatStore";
+import Loading from "./components/loading/Loading";
 
 const App = () => {
   const { currentUser, isLoading, fetchUserInfo } = useUserStore();
@@ -25,7 +26,11 @@ const App = () => {
   }, [fetchUserInfo]);
 
   if (isLoading) {
-    return <div className="loading">Loading...</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
   return (
     <div className="container">
