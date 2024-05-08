@@ -122,8 +122,10 @@ const UserInfo = () => {
               accept="image/*"
               onChange={handleAvatarChange}
             />
-            <button type="submit">Save Changes</button>
-            <button onClick={() => setShowModal(false)}>Cancel</button>
+            <span className="button">
+              <button type="submit">Save Changes</button>
+              <button onClick={() => setShowModal(false)}>Cancel</button>
+            </span>
           </form>
         </div>
       )}
